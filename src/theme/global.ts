@@ -8,4 +8,10 @@ export const GlobalStyle = createGlobalStyle`
     --red: #D9534F;
     --blue: #337AB7;
 }
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 `
