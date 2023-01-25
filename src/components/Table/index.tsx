@@ -13,26 +13,36 @@ export const Table = () => {
         .then(response => response.json())
         .then(data => setUsers(data))
         .catch(error => console.error(error))
-
     }
 
-    fetchingUsers()
+    /* const fazerCadastro = () => {
+        const obj = {
+            id: Math.random(),
+            'name': nome,
+            'username': nomeUsuario,
 
+        }
+    } */
 
     return (
         <T.Container>
+            <button onClick={() => fetchingUsers()}>Requisição</button>
             <table>
                     <caption>Usuários</caption>
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Nome</th>
+                        <th>Nome de usuário</th>
+                        <th>E-mail</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {users.map(user => <tr>
+                    {users.map(user => <tr key={user.id}>
                         <td>{user.id}</td>
                         <td>{user.name}</td>
+                        <td>{user.username}</td>
+                        <td>{user.email}</td>
                     </tr>)}
                 </tbody>
             </table>
