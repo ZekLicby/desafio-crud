@@ -4,14 +4,14 @@ import * as F from './style'
     
 } */
 
-export const Form = ({btnCadastrar, setBtnCadastrar, setNome, setNomeUsuario, setEmail, cadastrarUsuario}:any) => {
+export const Form = ({btnCadastrar, setBtnCadastrar, setNome, setNomeUsuario, setEmail, cadastrarUsuario, nome, nomeUsuario, email}:any) => {
 
     return (
         <F.Container>
             <div className="infos-container">
-                <input type="text" placeholder="Nome" onChange={e => setNome(e.target.value)} required/>
-                <input type="text" placeholder='Nome de usuário' onChange={e => setNomeUsuario(e.target.value)} required />
-                <input type="email" placeholder='E-mail' onChange={e => setEmail(e.target.value)} required/>
+                <input type="text" value={nome} placeholder="Nome" onChange={e => setNome(e.target.value)} />
+                <input type="text" value={nomeUsuario} placeholder='Nome de usuário' onChange={e => setNomeUsuario(e.target.value)}  />
+                <input type="email" value={email} placeholder='E-mail' onChange={e => setEmail(e.target.value)} />
             </div>
             
             <div className="buttons-container">

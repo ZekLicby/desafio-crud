@@ -19,13 +19,17 @@ function Home() {
       }
 
       setUsers([...users, obj])
+
+      setNome('')
+      setNomeUsuario('')
+      setEmail('')
     }
 
   return (
     <>
     {/*<h1>{JSON.stringify(users)}</h1>*/}
 
-      <Form btnCadastrar={btnCadastrar} setBtnCadastrar={setBtnCadastrar} setNome={setNome} setNomeUsuario={setNomeUsuario} setEmail={setEmail} cadastrarUsuario={cadastrarUsuario}/>
+      <Form btnCadastrar={btnCadastrar} setBtnCadastrar={setBtnCadastrar} setNome={setNome} setNomeUsuario={setNomeUsuario} setEmail={setEmail} cadastrarUsuario={cadastrarUsuario} nome={nome} nomeUsuario={nomeUsuario} email={email}/ >
       <Table users={users} setUsers={setUsers} />
       <Input/>
     </>
