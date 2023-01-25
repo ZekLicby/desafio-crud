@@ -6,7 +6,6 @@ export const Form = () => {
 
             <div className="infos-container">
                 <input type="text" placeholder="Nome" />
-                <input type="text" placeholder='Idade' />
                 <input type="text" placeholder='CPF' />
             </div>
             
