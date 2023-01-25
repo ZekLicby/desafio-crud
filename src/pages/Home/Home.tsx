@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import { Form } from '../../components/Form';
-import { Table } from '../../components/Table';
+import { Input } from '../../components/Atomo/Input';
+import { Form } from '../../components/Organela/Form';
+import { Table } from '../../components/Organela/Table';
 
 function Home() {
 
@@ -8,14 +9,25 @@ function Home() {
     const [nome, setNome] = useState<string>('')
     const [nomeUsuario, setNomeUsuario] = useState<string>('')
     const [email, setEmail] = useState<string>('')
+    const [users, setUsers] = useState<any[]>([])
+
+    const cadastrarUsuario = () => {
+      let obj = {
+        'name': nome,
+        'username': nomeUsuario,
+        'email': email
+      }
+
+      setUsers([...users, obj])
+    }
 
   return (
     <>
-    <h1>{nome}</h1>
-    <h1>{nomeUsuario}</h1>
-    <h1>{email}</h1>
-      <Form btnCadastrar={btnCadastrar} setBtnCadastrar={setBtnCadastrar} setNome={setNome} setNomeUsuario={setNomeUsuario} setEmail={setEmail} />
-      <Table/>
+    {/*<h1>{JSON.stringify(users)}</h1>*/}
+
+      <Form btnCadastrar={btnCadastrar} setBtnCadastrar={setBtnCadastrar} setNome={setNome} setNomeUsuario={setNomeUsuario} setEmail={setEmail} cadastrarUsuario={cadastrarUsuario}/>
+      <Table users={users} setUsers={setUsers} />
+      <Input/>
     </>
   );
 }
