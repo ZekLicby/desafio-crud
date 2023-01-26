@@ -20,26 +20,26 @@ export const Table = ({users, setUsers}:any) => {
     return (
         <T.Container>
             {/* <button onClick={() => fetchingUsers()}>Requisição</button> */}
-            <table>
-                    <caption>Usuários</caption>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Nome</th>
-                        <th>Nome de usuário</th>
-                        <th>E-mail</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {users.map((user:any, index:any) => <tr key={index}>
-                        <td>{index+1}</td>
-                        <td>{user.name}</td>
-                        <td>{user.username}</td>
-                        <td>{user.email}</td>
-                        <td><button>Selecionar</button></td>
-                    </tr>)}
-                </tbody>
-            </table>
+            <T.Table>
+                    <T.Caption>Usuários</T.Caption>
+                <T.Thead>
+                    <T.Tr>
+                        <T.Th>#</T.Th>
+                        <T.Th>Nome</T.Th>
+                        <T.Th>Nome de usuário</T.Th>
+                        <T.Th>E-mail</T.Th>
+                    </T.Tr>
+                </T.Thead>
+                <T.Tbody>
+                    {users.map((user:any, index:any) => <T.Tr key={index}>
+                        <T.Td>{index+1}</T.Td>
+                        <T.Td>{user.name}</T.Td>
+                        <T.Td>{user.username}</T.Td>
+                        <T.Td>{user.email}</T.Td>
+                        <T.Td><button>Selecionar</button></T.Td>
+                    </T.Tr>)}
+                </T.Tbody>
+            </T.Table>
         </T.Container>
     )
 }
