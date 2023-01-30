@@ -17,7 +17,7 @@ export const Form = ({btnCadastrar, setBtnCadastrar, setNome, setNomeUsuario, se
                 {
                     btnCadastrar
                     ?
-                    <Input type="button" value="Cadastrar" onClick={cadastrarUsuario} />
+                    <Input type="button" value="Cadastrar" onClick={() => cadastrarUsuario()} />
                     :
                     <div>
                         <Input type="button" value="Alterar" />

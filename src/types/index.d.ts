@@ -18,8 +18,9 @@ export interface TableProps {
 }
 
 export interface InputProps {
-    type: 'button' | 'text' | 'email'
+    type: string
     value: string
     placeholder?: string
     onChange?: React.ChangeEventHandle
+    onClick?: React.MouseEventHandler
 }

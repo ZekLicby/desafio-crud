@@ -12,7 +12,7 @@ const Home:React.FC = () => {
     const [email, setEmail] = useState<string>('')
     const [users, setUsers] = useState<{}[]>([])
 
-    const cadastrarUsuario:Function = () => {
+    const cadastrarUsuario = () => {
       let obj = {
         'name': nome,
         'username': nomeUsuario,
