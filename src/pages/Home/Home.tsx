@@ -1,17 +1,18 @@
 import React, {useState} from 'react';
-import { Input } from '../../components/Atomo/Input';
-import { Form } from '../../components/Organela/Form';
-import { Table } from '../../components/Organela/Table';
+import { Form } from '../../components/Form';
+import { Table } from '../../components/Table';
 
-function Home() {
+
+
+const Home:React.FC = () => {
 
     const [btnCadastrar, setBtnCadastrar] = useState<boolean>(true)
     const [nome, setNome] = useState<string>('')
     const [nomeUsuario, setNomeUsuario] = useState<string>('')
     const [email, setEmail] = useState<string>('')
-    const [users, setUsers] = useState<any[]>([])
+    const [users, setUsers] = useState<{}[]>([])
 
-    const cadastrarUsuario = () => {
+    const cadastrarUsuario:Function = () => {
       let obj = {
         'name': nome,
         'username': nomeUsuario,
@@ -31,7 +32,6 @@ function Home() {
 
       <Form btnCadastrar={btnCadastrar} setBtnCadastrar={setBtnCadastrar} setNome={setNome} setNomeUsuario={setNomeUsuario} setEmail={setEmail} cadastrarUsuario={cadastrarUsuario} nome={nome} nomeUsuario={nomeUsuario} email={email}/ >
       <Table users={users} setUsers={setUsers} />
-      <Input/>
     </>
   );
 }

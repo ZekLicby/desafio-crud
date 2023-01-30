@@ -1,7 +1,9 @@
 import * as T from './style'
-import {useEffect} from 'react'
+import React, {useEffect} from 'react'
+import { TableProps } from '../../types'
 
-export const Table = ({users, setUsers}:any) => {
+
+export const Table = ({users, setUsers}:TableProps) => {
 
     
     const fetchingUsers = () => {
@@ -9,7 +11,7 @@ export const Table = ({users, setUsers}:any) => {
 
         fetch(url)
         .then(response => response.json())
-        .then(data => setUsers(...users, data))
+        .then(data => setUsers(data))
         .catch(error => console.error(error))
     }
 
@@ -19,7 +21,6 @@ export const Table = ({users, setUsers}:any) => {
 
     return (
         <T.Container>
-            {/* <button onClick={() => fetchingUsers()}>Requisição</button> */}
             <T.Table>
                     <T.Caption>Usuários</T.Caption>
                 <T.Thead>
