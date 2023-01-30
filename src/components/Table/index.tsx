@@ -1,12 +1,13 @@
-import * as T from './style'
+import {Container, Table, Caption, Thead, Tr, Th, Tbody, Td} from './style'
 import React, {useEffect} from 'react'
 import { TableProps } from '../../types'
+import { InputComponent as Input } from '../Input'
 
 
-export const Table = ({users, setUsers}:TableProps) => {
+export const TableComponent = ({users, setUsers, selecionar}:TableProps) => {
 
     
-    const fetchingUsers = () => {
+    const fetchingUsers:Function = () => {
         const url = `https://jsonplaceholder.typicode.com/users`
 
         fetch(url)
@@ -20,27 +21,27 @@ export const Table = ({users, setUsers}:TableProps) => {
     }, [])
 
     return (
-        <T.Container>
-            <T.Table>
-                    <T.Caption>Usuários</T.Caption>
-                <T.Thead>
-                    <T.Tr>
-                        <T.Th>#</T.Th>
-                        <T.Th>Nome</T.Th>
-                        <T.Th>Nome de usuário</T.Th>
-                        <T.Th>E-mail</T.Th>
-                    </T.Tr>
-                </T.Thead>
-                <T.Tbody>
-                    {users.map((user:any, index:any) => <T.Tr key={index}>
-                        <T.Td>{index+1}</T.Td>
-                        <T.Td>{user.name}</T.Td>
-                        <T.Td>{user.username}</T.Td>
-                        <T.Td>{user.email}</T.Td>
-                        <T.Td><button>Selecionar</button></T.Td>
-                    </T.Tr>)}
-                </T.Tbody>
-            </T.Table>
-        </T.Container>
+        <Container>
+            <Table>
+                    <Caption>Usuários</Caption>
+                <Thead>
+                    <Tr>
+                        <Th>#</Th>
+                        <Th>Nome</Th>
+                        <Th>Nome de usuário</Th>
+                        <Th>E-mail</Th>
+                    </Tr>
+                </Thead>
+                <Tbody>
+                    {users.map((user:any, index:number) => <Tr key={index}>
+                        <Td>{index+1}</Td>
+                        <Td>{user.name}</Td>
+                        <Td>{user.username}</Td>
+                        <Td>{user.email}</Td>
+                        <Td><Input type="button" value="Selecionar" onClick={() => selecionar()}/></Td>
+                    </Tr>)}
+                </Tbody>
+            </Table>
+        </Container>
     )
 }

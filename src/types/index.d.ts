@@ -15,6 +15,7 @@ export interface FormProps {
 export interface TableProps {
     users: any[]
     setUsers: React.Dispatch<React.SetStateAction<any[]>>
+    selecionar: Function
 }
 
 export interface InputProps {
@@ -22,5 +23,9 @@ export interface InputProps {
     value: string
     placeholder?: string
     onChange?: React.ChangeEventHandle
+    onClick?: React.MouseEventHandler
+}
+
+export interface ButtonProps {
     onClick?: React.MouseEventHandler
 }

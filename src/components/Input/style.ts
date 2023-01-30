@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-export const Container = styled.input`
+export const Input = styled.input`
 
 `
