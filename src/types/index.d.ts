@@ -1,21 +1,21 @@
 import React from "react"
 
 export interface FormProps {
-    btnCadastrar: boolean
-    setBtnCadastrar: React.Dispatch<React.SetStateAction<boolean>>
-    setNome: React.Dispatch<React.SetStateAction<string>>
-    setNomeUsuario: React.Dispatch<React.SetStateAction<string>>
+    registerBtn: boolean
+    setRegisterBtn: React.Dispatch<React.SetStateAction<boolean>>
+    setName: React.Dispatch<React.SetStateAction<string>>
+    setUsername: React.Dispatch<React.SetStateAction<string>>
     setEmail: React.Dispatch<React.SetStateAction<string>>
-    cadastrarUsuario: Function
-    nome: string
-    nomeUsuario: string
+    registerUser: Function
+    name: string
+    username: string
     email: string
 }
 
 export interface TableProps {
     users: any[]
     setUsers: React.Dispatch<React.SetStateAction<any[]>>
-    selecionar: Function
+    selectUser: Function
 }
 
 export interface InputProps {

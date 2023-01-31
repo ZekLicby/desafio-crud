@@ -6,39 +6,43 @@ import { TableComponent } from '../../components/Table';
 
 const Home:React.FC = () => {
 
-    const [indiceVetor, setIndiceVetor] = useState<string>('')
-    const [btnCadastrar, setBtnCadastrar] = useState<boolean>(true)
-    const [nome, setNome] = useState<string>('')
-    const [nomeUsuario, setNomeUsuario] = useState<string>('')
+    const [indexVetor, setIndexVetor] = useState<number>(-1)
+    const [registerBtn, setRegisterBtn] = useState<boolean>(true)
+    const [name, setName] = useState<string>('')
+    const [username, setUsername] = useState<string>('')
     const [email, setEmail] = useState<string>('')
-    const [users, setUsers] = useState<{}[]>([])
+    const [users, setUsers] = useState<any[]>([])
 
-    const cadastrarUsuario:Function = () => {
+    const registerUser:Function = () => {
 
       let obj = {
-        'name': nome,
-        'username': nomeUsuario,
+        'name': name,
+        'username': username,
         'email': email
       }
 
       setUsers([...users, obj])
 
-      setNome('')
-      setNomeUsuario('')
+      setName('')
+      setUsername('')
       setEmail('')
       
     }
 
-    const selecionar:Function = (indice:string) => {
-      alert(indice)
+    const selectUser:Function = (indice:number) => {
+      setIndexVetor(indice)
+      setName(users[indice].name)
+      setUsername(users[indice].username)
+      setEmail(users[indice].email)
+
+      setRegisterBtn(false)
     }
 
   return (
     <>
-    {/*<h1>{JSON.stringify(users)}</h1>*/}
+      <FormComponent registerBtn={registerBtn} setRegisterBtn={setRegisterBtn} setName={setName} setUsername={setUsername} setEmail={setEmail} registerUser={registerUser} name={name} username={username} email={email}/ >
 
-      <FormComponent btnCadastrar={btnCadastrar} setBtnCadastrar={setBtnCadastrar} setNome={setNome} setNomeUsuario={setNomeUsuario} setEmail={setEmail} cadastrarUsuario={cadastrarUsuario} nome={nome} nomeUsuario={nomeUsuario} email={email}/ >
-      <TableComponent users={users} setUsers={setUsers} selecionar={selecionar} />
+      <TableComponent users={users} setUsers={setUsers} selectUser={selectUser} />
     </>
   );
 }

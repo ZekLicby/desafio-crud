@@ -4,7 +4,7 @@ import { TableProps } from '../../types'
 import { InputComponent as Input } from '../Input'
 
 
-export const TableComponent = ({users, setUsers, selecionar}:TableProps) => {
+export const TableComponent = ({users, setUsers, selectUser}:TableProps) => {
 
     
     const fetchingUsers:Function = () => {
@@ -38,7 +38,7 @@ export const TableComponent = ({users, setUsers, selecionar}:TableProps) => {
                         <Td>{user.name}</Td>
                         <Td>{user.username}</Td>
                         <Td>{user.email}</Td>
-                        <Td><Input type="button" value="Selecionar" onClick={() => selecionar()}/></Td>
+                        <Td><Input type="button" value="Selecionar" onClick={() => selectUser(index)}/></Td>
                     </Tr>)}
                 </Tbody>
             </Table>
