@@ -63,6 +63,13 @@ const Home: React.FC = () => {
         setRegisterBtn(true);
     };
 
+    const cancelAction: Function = () => {
+        setName("");
+        setUsername("");
+        setEmail("");
+        setRegisterBtn(true);
+    }
+
     return (
         <>
             <FormComponent
@@ -77,6 +84,7 @@ const Home: React.FC = () => {
                 email={email}
                 copyVector={copyVector}
                 deleteUser={deleteUser}
+                cancelAction={cancelAction}
             />
 
             <TableComponent

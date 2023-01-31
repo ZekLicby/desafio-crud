@@ -12,6 +12,7 @@ export interface FormProps {
     email: string;
     copyVector: Function;
     deleteUser: Function
+    cancelAction: Function
 }
 
 export interface TableProps {

@@ -15,6 +15,7 @@ export const FormComponent = ({
     email,
     copyVector,
     deleteUser,
+    cancelAction,
 }: FormProps) => {
     return (
         <Container>
@@ -66,7 +67,11 @@ export const FormComponent = ({
                             value="Delete"
                             onClick={() => deleteUser()}
                         />
-                        <Input type="button" value="Cancel" />
+                        <Input
+                            type="button"
+                            value="Cancel"
+                            onClick={() => cancelAction()}
+                        />
                     </div>
                 )}
             </div>
