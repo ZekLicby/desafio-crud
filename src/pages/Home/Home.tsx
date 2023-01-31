@@ -4,6 +4,7 @@ import { TableComponent } from "../../components/Table";
 import { UsersTypes } from "../../types";
 
 const Home: React.FC = () => {
+    const [term, setTerm] = useState<string>('')
     const [indexVector, setIndexVector] = useState<number>(-1);
     const [registerBtn, setRegisterBtn] = useState<boolean>(true);
     const [name, setName] = useState<string>("");
@@ -91,6 +92,8 @@ const Home: React.FC = () => {
                 users={users}
                 setUsers={setUsers}
                 selectUser={selectUser}
+                term={term}
+                setTerm={setTerm}
             />
         </>
     );

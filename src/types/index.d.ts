@@ -27,6 +27,8 @@ export interface TableProps {
         email: string;
     }[]>>;
     selectUser: Function;
+    term: string
+    setTerm: React.Dispatch<React.SetStateAction<string>>
 }
 
 export interface InputProps {
