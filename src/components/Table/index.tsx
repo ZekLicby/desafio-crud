@@ -27,13 +27,12 @@ export const TableComponent = ({
     return (
         <Container>
             <InputFilter
-                type="text"
+                type="search"
                 placeholder="Search for the name"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     setTerm(e.target.value)
                 }
             />
-            <h1>{term}</h1>
             <Table>
                 <Caption>Users</Caption>
                 <Thead>

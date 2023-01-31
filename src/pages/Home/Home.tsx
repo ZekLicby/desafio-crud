@@ -37,7 +37,7 @@ const Home: React.FC = () => {
         setRegisterBtn(false);
     };
 
-    const copyVector: Function = () => {
+    const updateUser: Function = () => {
         let obj = {
             name: name,
             username: username,
@@ -85,7 +85,7 @@ const Home: React.FC = () => {
                 name={name}
                 username={username}
                 email={email}
-                copyVector={copyVector}
+                updateUser={updateUser}
                 deleteUser={deleteUser}
                 cancelAction={cancelAction}
             />

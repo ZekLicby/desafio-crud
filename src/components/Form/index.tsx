@@ -19,7 +19,7 @@ export const FormComponent = ({
     name,
     username,
     email,
-    copyVector,
+    updateUser,
     deleteUser,
     cancelAction,
 }: FormProps) => {
@@ -67,7 +67,7 @@ export const FormComponent = ({
                     </RegisterButton>
                 ) : (
                     <Div>
-                        <UpdateButton onClick={() => copyVector()}>
+                        <UpdateButton onClick={() => updateUser()}>
                             Update
                         </UpdateButton>
                         <DeleteButton onClick={() => deleteUser()}>

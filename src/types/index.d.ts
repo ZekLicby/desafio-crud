@@ -10,7 +10,7 @@ export interface FormProps {
     name: string;
     username: string;
     email: string;
-    copyVector: Function;
+    updateUser: Function;
     deleteUser: Function
     cancelAction: Function
 }
@@ -29,13 +29,6 @@ export interface TableProps {
     selectUser: Function;
     term: string
     setTerm: React.Dispatch<React.SetStateAction<string>>
-}
-
-export interface InputProps {
-    type: string;
-    value: string;
-    placeholder?: string;
-    onChange?: React.ChangeEventHandle;
 }
 
 export interface UsersTypes {

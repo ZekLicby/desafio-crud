@@ -10,4 +10,7 @@ export const Input = styled.input`
     border: none;
 `;
 
-export const InputFilter = styled(Input)``;
+export const InputFilter = styled(Input)`
+    border-radius: 20px;
+    margin-left: 10px;
+`;

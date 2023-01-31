@@ -4,25 +4,34 @@ export const Container = styled.div`
     width: 100%;
     height: 40vh;
 `;
+
 export const Table = styled.table`
-    width: 100%;
+    width: 99.9%;
+    overflow-x: hidden;
     border-top: 1px black solid;
-    /* border-spacing: 0px; */
+    border-spacing: 0px;
 `;
 
-export const Thead = styled.thead``;
+export const Thead = styled.thead`
+    border-bottom: 2px black solid;
+`;
 
 export const Tbody = styled.tbody``;
 
 export const Caption = styled.caption``;
 
-export const Th = styled.th``;
+export const Th = styled.th`
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: aqua;
+`;
 
 export const Tr = styled.tr`
-    background-color: #eee;
+    &:nth-child(2n-1) {
+        background-color: aliceblue;
+    }
 `;
 
 export const Td = styled.td`
-    border-bottom: 1px solid black;
-    /* text-align: center; */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 `;

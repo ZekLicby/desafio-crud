@@ -26,4 +26,5 @@ export const CancelAction = styled(Button)`
 
 export const SelectButton = styled(Button)`
     background-color: ${(props) => props.theme.colors.green};
+    width: 100%;
 `;
