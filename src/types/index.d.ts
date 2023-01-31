@@ -11,6 +11,7 @@ export interface FormProps {
     username: string;
     email: string;
     copyVector: Function;
+    deleteUser: Function
 }
 
 export interface TableProps {

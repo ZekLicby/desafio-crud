@@ -48,7 +48,18 @@ const Home: React.FC = () => {
         setName("");
         setUsername("");
         setEmail("");
+        setRegisterBtn(true);
+    };
 
+    const deleteUser: Function = () => {
+        let vectorCopy = [...users];
+
+        vectorCopy.splice(indexVector, 1);
+        setUsers(vectorCopy);
+
+        setName("");
+        setUsername("");
+        setEmail("");
         setRegisterBtn(true);
     };
 
@@ -65,6 +76,7 @@ const Home: React.FC = () => {
                 username={username}
                 email={email}
                 copyVector={copyVector}
+                deleteUser={deleteUser}
             />
 
             <TableComponent
