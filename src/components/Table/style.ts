@@ -6,7 +6,7 @@ export const Container = styled.div`
 `;
 
 export const Table = styled.table`
-    width: 99.9%;
+    width: 100%;
     overflow-x: hidden;
     border-top: 1px black solid;
     border-spacing: 0px;
