@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { ThemeProvider } from "styled-components";
 import { FormComponent } from "../../components/Form";
 import { TableComponent } from "../../components/Table";
+import { defaultTheme } from "../../Styles/theme/Theme";
 import { UsersTypes } from "../../types";
 
 const Home: React.FC = () => {
@@ -72,7 +74,7 @@ const Home: React.FC = () => {
     }
 
     return (
-        <>
+        <ThemeProvider theme={defaultTheme}>
             <FormComponent
                 registerBtn={registerBtn}
                 setRegisterBtn={setRegisterBtn}
@@ -95,7 +97,7 @@ const Home: React.FC = () => {
                 term={term}
                 setTerm={setTerm}
             />
-        </>
+        </ThemeProvider>
     );
 };
 
