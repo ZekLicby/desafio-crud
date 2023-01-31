@@ -1,50 +1,78 @@
-import React, {useState} from 'react';
-import { FormComponent } from '../../components/Form';
-import { TableComponent } from '../../components/Table';
+import React, { useState } from "react";
+import { FormComponent } from "../../components/Form";
+import { TableComponent } from "../../components/Table";
 
+const Home: React.FC = () => {
+    const [indexVetor, setIndexVetor] = useState<number>(-1);
+    const [registerBtn, setRegisterBtn] = useState<boolean>(true);
+    const [name, setName] = useState<string>("");
+    const [username, setUsername] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [users, setUsers] = useState<any[]>([]);
 
+    const registerUser: Function = () => {
+        let obj = {
+            name: name,
+            username: username,
+            email: email,
+        };
 
-const Home:React.FC = () => {
+        setUsers([...users, obj]);
 
-    const [indexVetor, setIndexVetor] = useState<number>(-1)
-    const [registerBtn, setRegisterBtn] = useState<boolean>(true)
-    const [name, setName] = useState<string>('')
-    const [username, setUsername] = useState<string>('')
-    const [email, setEmail] = useState<string>('')
-    const [users, setUsers] = useState<any[]>([])
+        setName("");
+        setUsername("");
+        setEmail("");
+    };
 
-    const registerUser:Function = () => {
+    const selectUser: Function = (indice: number) => {
+        setIndexVetor(indice);
+        setName(users[indice].name);
+        setUsername(users[indice].username);
+        setEmail(users[indice].email);
 
-      let obj = {
-        'name': name,
-        'username': username,
-        'email': email
-      }
+        setRegisterBtn(false);
+    };
 
-      setUsers([...users, obj])
+    const copyVetor: Function = () => {
+        let obj = {
+            name: name,
+            username: username,
+            email: email,
+        };
 
-      setName('')
-      setUsername('')
-      setEmail('')
-      
-    }
+        let vetorCopy = [...users];
+        vetorCopy[indexVetor] = obj;
+        setUsers(vetorCopy);
 
-    const selectUser:Function = (indice:number) => {
-      setIndexVetor(indice)
-      setName(users[indice].name)
-      setUsername(users[indice].username)
-      setEmail(users[indice].email)
+        setName("");
+        setUsername("");
+        setEmail("");
 
-      setRegisterBtn(false)
-    }
+        setRegisterBtn(true);
+    };
 
-  return (
-    <>
-      <FormComponent registerBtn={registerBtn} setRegisterBtn={setRegisterBtn} setName={setName} setUsername={setUsername} setEmail={setEmail} registerUser={registerUser} name={name} username={username} email={email}/ >
+    return (
+        <>
+            <FormComponent
+                registerBtn={registerBtn}
+                setRegisterBtn={setRegisterBtn}
+                setName={setName}
+                setUsername={setUsername}
+                setEmail={setEmail}
+                registerUser={registerUser}
+                name={name}
+                username={username}
+                email={email}
+                copyVetor={copyVetor}
+            />
 
-      <TableComponent users={users} setUsers={setUsers} selectUser={selectUser} />
-    </>
-  );
-}
+            <TableComponent
+                users={users}
+                setUsers={setUsers}
+                selectUser={selectUser}
+            />
+        </>
+    );
+};
 
 export default Home;

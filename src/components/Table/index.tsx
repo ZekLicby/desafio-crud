@@ -1,29 +1,26 @@
-import {Container, Table, Caption, Thead, Tr, Th, Tbody, Td} from './style'
-import React, {useEffect} from 'react'
-import { TableProps } from '../../types'
-import { InputComponent as Input } from '../Input'
+import { Container, Table, Caption, Thead, Tr, Th, Tbody, Td } from "./style";
+import React, { useEffect } from "react";
+import { TableProps } from "../../types";
+import { InputComponent as Input } from "../Input";
 
-
-export const TableComponent = ({users, setUsers, selectUser}:TableProps) => {
-
-    
-    const fetchingUsers:Function = () => {
-        const url = `https://jsonplaceholder.typicode.com/users`
+export const TableComponent = ({ users, setUsers, selectUser }: TableProps) => {
+    const fetchingUsers: Function = () => {
+        const url = `https://jsonplaceholder.typicode.com/users`;
 
         fetch(url)
-        .then(response => response.json())
-        .then(data => setUsers(data))
-        .catch(error => console.error(error))
-    }
+            .then((response) => response.json())
+            .then((data) => setUsers(data))
+            .catch((error) => console.error(error));
+    };
 
     useEffect(() => {
-        fetchingUsers()
-    }, [])
+        fetchingUsers();
+    }, []);
 
     return (
         <Container>
             <Table>
-                    <Caption>Usuários</Caption>
+                <Caption>Usuários</Caption>
                 <Thead>
                     <Tr>
                         <Th>#</Th>
@@ -33,15 +30,23 @@ export const TableComponent = ({users, setUsers, selectUser}:TableProps) => {
                     </Tr>
                 </Thead>
                 <Tbody>
-                    {users.map((user:any, index:number) => <Tr key={index}>
-                        <Td>{index+1}</Td>
-                        <Td>{user.name}</Td>
-                        <Td>{user.username}</Td>
-                        <Td>{user.email}</Td>
-                        <Td><Input type="button" value="Selecionar" onClick={() => selectUser(index)}/></Td>
-                    </Tr>)}
+                    {users.map((user: any, index: number) => (
+                        <Tr key={index}>
+                            <Td>{index + 1}</Td>
+                            <Td>{user.name}</Td>
+                            <Td>{user.username}</Td>
+                            <Td>{user.email}</Td>
+                            <Td>
+                                <Input
+                                    type="button"
+                                    value="Selecionar"
+                                    onClick={() => selectUser(index)}
+                                />
+                            </Td>
+                        </Tr>
+                    ))}
                 </Tbody>
             </Table>
         </Container>
-    )
-}
+    );
+};
