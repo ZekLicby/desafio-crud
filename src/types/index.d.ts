@@ -36,11 +36,6 @@ export interface InputProps {
     value: string;
     placeholder?: string;
     onChange?: React.ChangeEventHandle;
-    onClick?: React.MouseEventHandler;
-}
-
-export interface ButtonProps {
-    onClick?: React.MouseEventHandler;
 }
 
 export interface UsersTypes {

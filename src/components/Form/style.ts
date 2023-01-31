@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.form`
     width: 60%;
     height: 20vh;
     margin: 5% auto;
@@ -15,8 +15,8 @@ export const DivButtons = styled.div`
 `;
 
 export const Div = styled.div`
-width: 100%;
-`
+    width: 100%;
+`;
 
 export const DivInfos = styled(DivButtons)`
     height: auto;

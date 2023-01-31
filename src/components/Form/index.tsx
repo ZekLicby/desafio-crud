@@ -1,6 +1,12 @@
 import React from "react";
 import { FormProps } from "../../types";
-import { Input, InputCancelAction, InputDeleteButton, InputRegisterButton, InputUpdateButton } from "../Input/style";
+import {
+    CancelAction,
+    DeleteButton,
+    RegisterButton,
+    UpdateButton,
+} from "../Button/style";
+import { Input } from "../Input/style";
 import { Container, Div, DivButtons, DivInfos } from "./style";
 
 export const FormComponent = ({
@@ -27,6 +33,7 @@ export const FormComponent = ({
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                         setName(e.target.value)
                     }
+                    required
                 />
 
                 <Input
@@ -36,6 +43,7 @@ export const FormComponent = ({
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                         setUsername(e.target.value)
                     }
+                    required
                 />
 
                 <Input
@@ -45,33 +53,29 @@ export const FormComponent = ({
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                         setEmail(e.target.value)
                     }
+                    required
                 />
             </DivInfos>
 
             <DivButtons>
                 {registerBtn ? (
-                    <InputRegisterButton
-                        type="button"
-                        value="Register"
+                    <RegisterButton
+                        type="submit"
                         onClick={() => registerUser()}
-                    />
+                    >
+                        Register
+                    </RegisterButton>
                 ) : (
                     <Div>
-                        <InputUpdateButton
-                            type="button"
-                            value="Update"
-                            onClick={() => copyVector()}
-                        />
-                        <InputDeleteButton
-                            type="button"
-                            value="Delete"
-                            onClick={() => deleteUser()}
-                        />
-                        <InputCancelAction
-                            type="button"
-                            value="Cancel"
-                            onClick={() => cancelAction()}
-                        />
+                        <UpdateButton onClick={() => copyVector()}>
+                            Update
+                        </UpdateButton>
+                        <DeleteButton onClick={() => deleteUser()}>
+                            Delete
+                        </DeleteButton>
+                        <CancelAction onClick={() => cancelAction()}>
+                            Cancel
+                        </CancelAction>
                     </Div>
                 )}
             </DivButtons>

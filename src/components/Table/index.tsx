@@ -1,9 +1,16 @@
 import { Container, Table, Caption, Thead, Tr, Th, Tbody, Td } from "./style";
 import React, { useEffect } from "react";
 import { TableProps, UserTypes } from "../../types";
-import { InputFilter, InputSelectButton } from "../Input/style";
+import { InputFilter } from "../Input/style";
+import { SelectButton } from "../Button/style";
 
-export const TableComponent = ({ users, setUsers, selectUser, term, setTerm }: TableProps) => {
+export const TableComponent = ({
+    users,
+    setUsers,
+    selectUser,
+    term,
+    setTerm,
+}: TableProps) => {
     const fetchingUsers: Function = () => {
         const url = `https://jsonplaceholder.typicode.com/users`;
 
@@ -19,7 +26,13 @@ export const TableComponent = ({ users, setUsers, selectUser, term, setTerm }: T
 
     return (
         <Container>
-            <InputFilter type="text" placeholder="Search for the name" onChange={(e:React.ChangeEvent<HTMLInputElement>) => setTerm(e.target.value)} />
+            <InputFilter
+                type="text"
+                placeholder="Search for the name"
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setTerm(e.target.value)
+                }
+            />
             <h1>{term}</h1>
             <Table>
                 <Caption>Users</Caption>
@@ -32,21 +45,23 @@ export const TableComponent = ({ users, setUsers, selectUser, term, setTerm }: T
                     </Tr>
                 </Thead>
                 <Tbody>
-                    {users.filter(obj => obj.name.includes(term)).map((user: UserTypes , index: number) => (
-                        <Tr key={index}>
-                            <Td>{index + 1}</Td>
-                            <Td>{user.name}</Td>
-                            <Td>{user.username}</Td>
-                            <Td>{user.email}</Td>
-                            <Td>
-                                <InputSelectButton
-                                    type="button"
-                                    value="Select"
-                                    onClick={() => selectUser(index)}
-                                />
-                            </Td>
-                        </Tr>
-                    ))}
+                    {users
+                        .filter((obj) => obj.name.includes(term))
+                        .map((user: UserTypes, index: number) => (
+                            <Tr key={index}>
+                                <Td>{index + 1}</Td>
+                                <Td>{user.name}</Td>
+                                <Td>{user.username}</Td>
+                                <Td>{user.email}</Td>
+                                <Td>
+                                    <SelectButton
+                                        onClick={() => selectUser(index)}
+                                    >
+                                        Select
+                                    </SelectButton>
+                                </Td>
+                            </Tr>
+                        ))}
                 </Tbody>
             </Table>
         </Container>

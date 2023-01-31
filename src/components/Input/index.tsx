@@ -6,7 +6,6 @@ export const InputComponent: Function = ({
     value,
     placeholder,
     onChange,
-    onClick,
 }: InputProps) => {
     return <></>;
 };
