@@ -1,6 +1,6 @@
 import { Container, Table, Caption, Thead, Tr, Th, Tbody, Td } from "./style";
 import React, { useEffect } from "react";
-import { TableProps, UserTypes } from "../../types";
+import { TableProps, UsersTypes} from "../../types";
 import { InputFilter } from "../Input/style";
 import { SelectButton } from "../Button/style";
 
@@ -46,7 +46,7 @@ export const TableComponent = ({
                 <Tbody>
                     {users
                         .filter((obj) => obj.name.includes(term))
-                        .map((user: UserTypes, index: number) => (
+                        .map((user: UsersTypes, index: number) => (
                             <Tr key={index}>
                                 <Td>{index + 1}</Td>
                                 <Td>{user.name}</Td>
