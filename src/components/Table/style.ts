@@ -19,7 +19,7 @@ export const Caption = styled.caption``;
 export const Th = styled.th``;
 
 export const Tr = styled.tr`
-    background-color: aliceblue;
+    background-color: #eee;
 `;
 
 export const Td = styled.td`

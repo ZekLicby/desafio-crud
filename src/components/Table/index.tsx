@@ -1,6 +1,6 @@
 import { Container, Table, Caption, Thead, Tr, Th, Tbody, Td } from "./style";
 import React, { useEffect } from "react";
-import { TableProps } from "../../types";
+import { TableProps, UserTypes } from "../../types";
 import { InputComponent as Input } from "../Input";
 
 export const TableComponent = ({ users, setUsers, selectUser }: TableProps) => {
@@ -20,17 +20,17 @@ export const TableComponent = ({ users, setUsers, selectUser }: TableProps) => {
     return (
         <Container>
             <Table>
-                <Caption>Usuários</Caption>
+                <Caption>Users</Caption>
                 <Thead>
                     <Tr>
                         <Th>#</Th>
-                        <Th>Nome</Th>
-                        <Th>Nome de usuário</Th>
+                        <Th>Name</Th>
+                        <Th>Username</Th>
                         <Th>E-mail</Th>
                     </Tr>
                 </Thead>
                 <Tbody>
-                    {users.map((user: any, index: number) => (
+                    {users.map((user: UserTypes , index: number) => (
                         <Tr key={index}>
                             <Td>{index + 1}</Td>
                             <Td>{user.name}</Td>
@@ -39,7 +39,7 @@ export const TableComponent = ({ users, setUsers, selectUser }: TableProps) => {
                             <Td>
                                 <Input
                                     type="button"
-                                    value="Selecionar"
+                                    value="Select"
                                     onClick={() => selectUser(index)}
                                 />
                             </Td>

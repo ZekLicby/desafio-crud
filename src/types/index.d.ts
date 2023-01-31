@@ -10,7 +10,7 @@ export interface FormProps {
     name: string;
     username: string;
     email: string;
-    copyVetor: Function;
+    copyVector: Function;
 }
 
 export interface TableProps {
@@ -29,4 +29,13 @@ export interface InputProps {
 
 export interface ButtonProps {
     onClick?: React.MouseEventHandler;
+}
+
+export interface UsersTypes {
+    name: string;
+    username: string;
+    email: string;
+}
+
+export interface UserTypes extends UsersTypes {
 }

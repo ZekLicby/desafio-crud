@@ -13,7 +13,7 @@ export const FormComponent = ({
     name,
     username,
     email,
-    copyVetor,
+    copyVector,
 }: FormProps) => {
     return (
         <Container>
@@ -21,7 +21,7 @@ export const FormComponent = ({
                 <Input
                     type="text"
                     value={name}
-                    placeholder="Nome"
+                    placeholder="Name"
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                         setName(e.target.value)
                     }
@@ -30,7 +30,7 @@ export const FormComponent = ({
                 <Input
                     type="text"
                     value={username}
-                    placeholder="Nome de usuário"
+                    placeholder="Username"
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                         setUsername(e.target.value)
                     }
@@ -50,18 +50,18 @@ export const FormComponent = ({
                 {registerBtn ? (
                     <Input
                         type="button"
-                        value="Cadastrar"
+                        value="Register"
                         onClick={() => registerUser()}
                     />
                 ) : (
                     <div>
                         <Input
                             type="button"
-                            value="Alterar"
-                            onClick={() => copyVetor()}
+                            value="Update"
+                            onClick={() => copyVector()}
                         />
-                        <Input type="button" value="Deletar" />
-                        <Input type="button" value="Cancelar" />
+                        <Input type="button" value="Delete" />
+                        <Input type="button" value="Cancel" />
                     </div>
                 )}
             </div>

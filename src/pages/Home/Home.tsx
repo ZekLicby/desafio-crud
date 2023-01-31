@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { FormComponent } from "../../components/Form";
 import { TableComponent } from "../../components/Table";
+import { UsersTypes } from "../../types";
 
 const Home: React.FC = () => {
-    const [indexVetor, setIndexVetor] = useState<number>(-1);
+    const [indexVector, setIndexVector] = useState<number>(-1);
     const [registerBtn, setRegisterBtn] = useState<boolean>(true);
     const [name, setName] = useState<string>("");
     const [username, setUsername] = useState<string>("");
     const [email, setEmail] = useState<string>("");
-    const [users, setUsers] = useState<any[]>([]);
+    const [users, setUsers] = useState<UsersTypes[]>([]);
 
     const registerUser: Function = () => {
         let obj = {
@@ -24,25 +25,25 @@ const Home: React.FC = () => {
         setEmail("");
     };
 
-    const selectUser: Function = (indice: number) => {
-        setIndexVetor(indice);
-        setName(users[indice].name);
-        setUsername(users[indice].username);
-        setEmail(users[indice].email);
+    const selectUser: Function = (index: number) => {
+        setIndexVector(index);
+        setName(users[index].name);
+        setUsername(users[index].username);
+        setEmail(users[index].email);
 
         setRegisterBtn(false);
     };
 
-    const copyVetor: Function = () => {
+    const copyVector: Function = () => {
         let obj = {
             name: name,
             username: username,
             email: email,
         };
 
-        let vetorCopy = [...users];
-        vetorCopy[indexVetor] = obj;
-        setUsers(vetorCopy);
+        let vectorCopy = [...users];
+        vectorCopy[indexVector] = obj;
+        setUsers(vectorCopy);
 
         setName("");
         setUsername("");
@@ -63,7 +64,7 @@ const Home: React.FC = () => {
                 name={name}
                 username={username}
                 email={email}
-                copyVetor={copyVetor}
+                copyVector={copyVector}
             />
 
             <TableComponent
