@@ -14,8 +14,16 @@ export interface FormProps {
 }
 
 export interface TableProps {
-    users: any[];
-    setUsers: React.Dispatch<React.SetStateAction<any[]>>;
+    users: {
+        name: string;
+        username: string;
+        email: string;
+    }[];
+    setUsers: React.Dispatch<React.SetStateAction<{
+        name: string;
+        username: string;
+        email: string;
+    }[]>>;
     selectUser: Function;
 }
 
