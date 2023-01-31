@@ -1,7 +1,7 @@
 import { Container, Table, Caption, Thead, Tr, Th, Tbody, Td } from "./style";
 import React, { useEffect } from "react";
 import { TableProps, UserTypes } from "../../types";
-import { InputComponent as Input } from "../Input";
+import { InputFilter, InputSelectButton } from "../Input/style";
 
 export const TableComponent = ({ users, setUsers, selectUser, term, setTerm }: TableProps) => {
     const fetchingUsers: Function = () => {
@@ -19,7 +19,7 @@ export const TableComponent = ({ users, setUsers, selectUser, term, setTerm }: T
 
     return (
         <Container>
-            <Input type="text" placeholder="Search for the name" onChange={(e:React.ChangeEvent<HTMLInputElement>) => setTerm(e.target.value)} />
+            <InputFilter type="text" placeholder="Search for the name" onChange={(e:React.ChangeEvent<HTMLInputElement>) => setTerm(e.target.value)} />
             <h1>{term}</h1>
             <Table>
                 <Caption>Users</Caption>
@@ -39,7 +39,7 @@ export const TableComponent = ({ users, setUsers, selectUser, term, setTerm }: T
                             <Td>{user.username}</Td>
                             <Td>{user.email}</Td>
                             <Td>
-                                <Input
+                                <InputSelectButton
                                     type="button"
                                     value="Select"
                                     onClick={() => selectUser(index)}

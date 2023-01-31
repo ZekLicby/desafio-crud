@@ -1,7 +1,7 @@
 import React from "react";
 import { FormProps } from "../../types";
-import { InputComponent as Input } from "../Input";
-import { Container } from "./style";
+import { Input, InputCancelAction, InputDeleteButton, InputRegisterButton, InputUpdateButton } from "../Input/style";
+import { Container, Div, DivButtons, DivInfos } from "./style";
 
 export const FormComponent = ({
     registerBtn,
@@ -19,7 +19,7 @@ export const FormComponent = ({
 }: FormProps) => {
     return (
         <Container>
-            <div className="infos-container">
+            <DivInfos>
                 <Input
                     type="text"
                     value={name}
@@ -46,35 +46,35 @@ export const FormComponent = ({
                         setEmail(e.target.value)
                     }
                 />
-            </div>
+            </DivInfos>
 
-            <div className="buttons-container">
+            <DivButtons>
                 {registerBtn ? (
-                    <Input
+                    <InputRegisterButton
                         type="button"
                         value="Register"
                         onClick={() => registerUser()}
                     />
                 ) : (
-                    <div>
-                        <Input
+                    <Div>
+                        <InputUpdateButton
                             type="button"
                             value="Update"
                             onClick={() => copyVector()}
                         />
-                        <Input
+                        <InputDeleteButton
                             type="button"
                             value="Delete"
                             onClick={() => deleteUser()}
                         />
-                        <Input
+                        <InputCancelAction
                             type="button"
                             value="Cancel"
                             onClick={() => cancelAction()}
                         />
-                    </div>
+                    </Div>
                 )}
-            </div>
+            </DivButtons>
         </Container>
     );
 };

@@ -6,6 +6,7 @@ export const defaultTheme: DefaultTheme = {
         green: '#5CB85C',
         yellow: '#F0AD4E',
         red: '#D9534F',
-        blue: '#337AB7'
+        blue: '#337AB7',
+        gray: '#AAA'
     }
 }
