@@ -61,7 +61,14 @@ export const FormComponent = ({
                 {registerBtn ? (
                     <RegisterButton
                         type="submit"
-                        onClick={() => registerUser()}
+                        onClick={() => {
+                            if(name.length > 1  && username.length > 1 && (email.length > 1 && email.includes("@"))){
+                                registerUser()
+                            }else{
+                                return
+                            }
+                        }
+                    }
                     >
                         Register
                     </RegisterButton>
