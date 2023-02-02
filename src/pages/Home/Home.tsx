@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { ThemeProvider } from "styled-components";
 import { FormComponent } from "../../components/Form";
+import { H1 } from "../../components/H/style";
+import { P } from "../../components/P/style";
 import { TableComponent } from "../../components/Table";
-import { defaultTheme } from "../../Styles/theme/Theme";
 import { UsersTypes } from "../../types";
+import { Container } from "./style";
 
 const Home: React.FC = () => {
-    const [term, setTerm] = useState<string>('')
+    const [term, setTerm] = useState<string>("");
     const [indexVector, setIndexVector] = useState<number>(-1);
     const [registerBtn, setRegisterBtn] = useState<boolean>(true);
     const [name, setName] = useState<string>("");
@@ -71,34 +72,43 @@ const Home: React.FC = () => {
         setUsername("");
         setEmail("");
         setRegisterBtn(true);
-    }
+    };
 
     return (
-        <ThemeProvider theme={defaultTheme}>
-            <FormComponent
-                registerBtn={registerBtn}
-                setRegisterBtn={setRegisterBtn}
-                setName={setName}
-                setUsername={setUsername}
-                setEmail={setEmail}
-                registerUser={registerUser}
-                name={name}
-                username={username}
-                email={email}
-                updateUser={updateUser}
-                deleteUser={deleteUser}
-                cancelAction={cancelAction}
-            />
+            <Container>
+                <H1>Título</H1>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero expedita blanditiis molestias maiores ex cumque commodi quam id dolor dolores ipsam, sed inventore minus aliquid deserunt porro provident nisi repudiandae.</P>
+                <FormComponent
+                    registerBtn={registerBtn}
+                    setRegisterBtn={setRegisterBtn}
+                    setName={setName}
+                    setUsername={setUsername}
+                    setEmail={setEmail}
+                    registerUser={registerUser}
+                    name={name}
+                    username={username}
+                    email={email}
+                    updateUser={updateUser}
+                    deleteUser={deleteUser}
+                    cancelAction={cancelAction}
+                />
 
-            <TableComponent
-                users={users}
-                setUsers={setUsers}
-                selectUser={selectUser}
-                term={term}
-                setTerm={setTerm}
-            />
-        </ThemeProvider>
+                <TableComponent
+                    users={users}
+                    setUsers={setUsers}
+                    selectUser={selectUser}
+                    term={term}
+                    setTerm={setTerm}
+                />
+            </Container>
     );
 };
 
 export default Home;
+
+{/* <div className="container">
+        <button className="accent" 
+          onClick={() => setIsDarkTheme(!isDarkTheme)}>
+          Trocar Tema
+        </button>
+      </div > */}

@@ -2,13 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body{
-    font-family: sans-serif;
-}
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        outline: 0;
+        transition: 0.1s;
+    }
 `;
