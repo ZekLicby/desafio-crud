@@ -14,6 +14,7 @@ const Home: React.FC = () => {
     const [username, setUsername] = useState<string>("");
     const [email, setEmail] = useState<string>("");
     const [users, setUsers] = useState<UsersTypes[]>([]);
+    /* const [changeTheme, setChangeTheme] = useState<number>(0) */
 
     const registerUser: Function = () => {
         let obj = {
@@ -74,6 +75,10 @@ const Home: React.FC = () => {
         setRegisterBtn(true);
     };
 
+    /* const handleChangeTheme = () => {
+        changeTheme === 0 ? setChangeTheme(1) : setChangeTheme(0)
+        console.log(changeTheme)
+    } */
     return (
             <Container>
                 <H1>Título</H1>
@@ -93,6 +98,8 @@ const Home: React.FC = () => {
                     cancelAction={cancelAction}
                 />
 
+{/*                 <button onClick={() => handleChangeTheme()}>Mudar tema</button> */}
+
                 <TableComponent
                     users={users}
                     setUsers={setUsers}
@@ -105,10 +112,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
-{/* <div className="container">
-        <button className="accent" 
-          onClick={() => setIsDarkTheme(!isDarkTheme)}>
-          Trocar Tema
-        </button>
-      </div > */}

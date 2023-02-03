@@ -23,11 +23,10 @@ export const Caption = styled.caption``;
 export const Th = styled.th`
     text-align: left;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    background-color: aqua;
 `;
 
 export const Tr = styled.tr`
-    &:nth-child(2n-1) {
+    &:nth-child(2n+2) {
         background-color: aliceblue;
     }
 `;

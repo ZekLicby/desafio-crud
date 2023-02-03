@@ -10,17 +10,11 @@ export default createGlobalStyle`
     }
 
     body {
-        background-color: ${(props:any) => props.theme.background};
-        color: ${(props:any) => props.theme.text};        
+        background-color: ${({theme}:any) => theme.lightTheme.background};
+        color: ${({theme}:any) => theme.lightTheme.text};        
     }
 
     h1 {
-        color: ${(props:any) => props.theme.titles};        
-    }
-
-    .accent {
-        background-color: ${(props:any) => props.theme.accent};
-        color: ${(props:any) => props.theme.text};
-        height: 30px;
+        color: ${({theme}:any) => theme.lightTheme.titles};        
     }
 `;

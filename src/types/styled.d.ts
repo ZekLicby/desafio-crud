@@ -10,6 +10,11 @@ declare module 'styled-components' {
             blue: string[]
             gray: string[]
         },
-        background: string,
+        lightTheme: {
+            background: string
+            titles: string
+            text: string
+            accent: string
+        }
     }
 }

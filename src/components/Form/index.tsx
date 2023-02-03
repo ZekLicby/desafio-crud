@@ -62,7 +62,7 @@ export const FormComponent = ({
                     <RegisterButton
                         type="submit"
                         onClick={() => {
-                            if(name.length > 1  && username.length > 1 && (email.length > 1 && email.includes("@"))){
+                            if(name.length > 1  && username.length > 1 && (email.length > 1 && email.includes("@gmail"))){
                                 registerUser()
                             }else{
                                 return
